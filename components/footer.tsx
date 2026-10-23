@@ -6,29 +6,24 @@ import { Mark } from "./mark";
 import { useStatus } from "@/lib/status";
 
 const X = process.env.NEXT_PUBLIC_X_HANDLE || "holdipofun";
+const ANNOUNCED_CA = "2THmSdmJcczzdkdzpx1n5BF7JofD7QWy9ABKnGWGpipo";
 
 export const Footer = () => {
   const { status } = useStatus();
-  const ca = status?.mint ?? null;
+  const ca = status?.mint || ANNOUNCED_CA;
   return (
     <footer style={{ borderTop: "1px solid var(--line)", marginTop: 56 }}>
       <div className="wrap" style={{ display: "flex", alignItems: "center", gap: 18, padding: "16px 24px", flexWrap: "wrap", fontSize: 12 }}>
         <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <Mark size={12} /> holdipo
         </span>
-        <a href={`https://x.com/${X}`} target="_blank" rel="noreferrer" className="mu">
+        <a href={`https://x.com/${X}`} target="_blank" rel="noreferrer" className="mu" aria-label="holdipo on X">
           x.com/{X}
         </a>
         <span style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0 }}>
           <span className="mu">CA</span>
-          {ca ? (
-            <>
-              <code style={{ overflow: "hidden", textOverflow: "ellipsis", maxWidth: 360 }}>{ca}</code>
-              <Copy text={ca} />
-            </>
-          ) : (
-            <span className="mu">soon</span>
-          )}
+          <code style={{ overflow: "hidden", textOverflow: "ellipsis", maxWidth: 360 }}>{ca}</code>
+          <Copy text={ca} />
         </span>
         <span style={{ marginLeft: "auto", display: "flex", gap: 16 }} className="mu">
           <Link href="/me">my payout</Link>

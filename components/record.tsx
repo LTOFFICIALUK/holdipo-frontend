@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Chart } from "@/components/chart";
 import { Countdown } from "@/components/countdown";
 import { api } from "@/lib/api";
 import { ago, short, sol, solscanAccount, solscanTx, tokens, usd } from "@/lib/format";
@@ -123,6 +124,11 @@ export const Record = ({ intro, routeLabel }: { intro: React.ReactNode; routeLab
   return (
     <div>
       {intro}
+      {status?.live && status.mint && (
+        <div style={{ marginTop: 26 }}>
+          <Chart mint={status.mint} height={340} />
+        </div>
+      )}
       <div className="stats" style={{ marginTop: 26 }}>
         {[
           [status?.live ? <Countdown key="c" to={status.nextSplitAt} /> : "soon", "NEXT SPLIT"],

@@ -235,3 +235,72 @@ table.t tr:last-child td {
 code {
   font-family: inherit;
 }
+
+/* holdipo look: soft, editorial. Geist for reading, mono only for numbers, labels and addresses. */
+body {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+}
+code,
+.label,
+table.t,
+.stat,
+.btn,
+.input,
+nav,
+footer {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+h1:not(.sans) {
+  font-family: var(--font-sans), ui-sans-serif, sans-serif;
+  font-weight: 300 !important;
+  letter-spacing: -0.02em;
+  font-size: 40px !important;
+}
+.panel {
+  border-radius: 16px;
+  background: #0d0c0a;
+  border-color: #1d1b17;
+}
+.panel-head {
+  border-bottom: none;
+  padding: 16px 18px 4px;
+  font-size: 13px;
+}
+.panel-head b {
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+.btn {
+  border-radius: 999px;
+}
+.input {
+  border-radius: 12px;
+}
+.sec {
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 300;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+}
+.sec::before {
+  content: "";
+}
+.stats {
+  border: none !important;
+  gap: 10px;
+}
+.stat {
+  border: 1px solid #1d1b17 !important;
+  border-radius: 16px;
+  background: #0d0c0a;
+}
+.stat > div:first-child {
+  color: var(--acc);
+  font-weight: 300;
+}
+table.t td,
+table.t th {
+  border-bottom-color: #1a1815;
+}

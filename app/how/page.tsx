@@ -6,10 +6,10 @@ import { sol } from "@/lib/format";
 const Block = ({ n, title, children }: { n: number; title: string; children: React.ReactNode }) => (
   <section className="panel" style={{ padding: 22 }}>
     <div style={{ display: "flex", gap: 14, alignItems: "baseline" }}>
-      <span className="acc" style={{ fontSize: 24 }}>
+      <span className="acc sans" style={{ fontSize: 34, fontWeight: 300, lineHeight: 1 }}>
         {n}
       </span>
-      <h2 style={{ fontSize: 18, fontWeight: 500 }}>{title}</h2>
+      <h2 className="sans" style={{ fontSize: 22, fontWeight: 400 }}>{title}</h2>
     </div>
     <div className="mu prose" style={{ marginTop: 14, fontSize: 13, lineHeight: 1.8 }}>
       {children}
