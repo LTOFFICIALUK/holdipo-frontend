@@ -6,7 +6,7 @@ import { Mark } from "./mark";
 import { useStatus } from "@/lib/status";
 
 const X = process.env.NEXT_PUBLIC_X_HANDLE || "holdipofun";
-const ANNOUNCED_CA = "2THmSdmJcczzdkdzpx1n5BF7JofD7QWy9ABKnGWGpipo";
+const ANNOUNCED_CA = "2KnkDwgMA5K51rEjLCwkEi9KS3kYqitN8Q8jSZFB9ipo";
 
 export const Footer = () => {
   const { status } = useStatus();
